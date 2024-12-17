@@ -1,0 +1,158 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.left-section {
+    width: 60%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.right-section {
+    width: 40%;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-box {
+    max-width: 600px; /* Perbesar lebar maksimal kotak */
+    width: 100%;
+    text-align: left; /* Rata kiri semua konten di dalam kotak */
+    padding: 20px; /* Tambahkan padding jika perlu */
+}
+
+.logo-placeholder {
+    margin-bottom: 10px;
+}
+
+.logo-placeholder h2 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Kurangi jarak antar input group */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px; /* Perbesar ukuran teks label */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px; /* Perbesar padding untuk memperluas input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Perbesar ukuran teks dalam input */
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px; /* Perbesar tombol */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px; /* Perbesar ukuran teks pada tombol */
+    cursor: pointer;
+    margin-top: 10px; /* Tambahkan sedikit jarak atas */
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.register-link {
+    margin-top: 15px; /* Kurangi jarak antara tombol dan link */
+    color: #666;
+    text-align: right; /* Pastikan hanya bagian ini yang rata tengah */
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsif untuk tampilan layar kecil */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Perkecil ukuran login-box pada layar kecil */
+    .login-box {
+        max-width: 100%;
+    }
+
+    /* Perbesar gambar agar mengikuti lebar layar */
+    .right-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-section img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    }
+
+    /* Sesuaikan tampilan pada layar lebih kecil */
+    .register-link {
+        text-align: center;
+    }
+}

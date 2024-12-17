@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function kategoriTugas()
+    {
+        return $this->hasMany(KategoriTugas::class);
+    }
 }

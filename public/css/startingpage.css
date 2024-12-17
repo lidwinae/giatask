@@ -1,0 +1,467 @@
+/* Style umum untuk navbar */
+.navbar {
+    background-color: #3f8cdf;  /* Sesuaikan dengan warna navbar yang terlihat */
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 100%;  /* Maksimum lebar kontainer */
+    margin: 0 auto;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+}
+
+.navbar img {
+    width: 120px;
+    margin-left: 100px;
+    height: auto;
+}
+
+/* Branding Navbar */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Style untuk menu */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+    color: #fff;
+    background-color: #333;  /* Warna latar saat hover */
+    border-radius: 5px;
+}
+
+/* Style untuk tombol Login */
+.navbar-actions .btn-Masuk {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 100px;
+}
+
+.navbar-actions .btn-Masuk:hover {
+    background-color: #888;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.background {
+    background: linear-gradient(to bottom, #ffffff, #7baaf0);  /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Memastikan gambar menyesuaikan ukuran layar */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    height: 72vh; /* Tinggi elemen 100% dari tinggi viewport */
+    width: 100%; /* Lebar elemen 100% dari lebar viewport */
+    display: block; /* Gunakan flexbox untuk memusatkan teks */
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    position: relative; /* Untuk layer teks */
+    font-family: Poppins;
+}
+
+
+.text {
+    color: white; /* Warna teks */
+    text-align: center; /* Posisi teks */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi transparan untuk teks */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+/* Kontainer Vertikal */
+.container-about-us {
+    display: flex;
+    flex-direction: column; /* Elemen welcome dan background tersusun vertikal */
+    align-items: center; /* Pusatkan secara horizontal */
+    gap: 20px; /* Jarak antar elemen */
+}
+
+
+
+.left-column {
+    flex: 6; /* 60% dari lebar welcome */
+    background-color: #fff; /* Opsional: Warna latar */
+    padding: 20px;
+    text-align: left;
+}
+
+.right-column {
+    flex: 4; /* 40% dari lebar welcome */
+    background-color: #fff; /* Opsional: Warna latar */
+    padding: 20px;
+    text-align: left;
+} 
+
+.text h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text p {
+    color: #555;
+}
+
+
+
+/* Container utama */
+/* Elemen Welcome */
+
+
+.welcome {
+    display: flex;
+    justify-content: center; /* Posisikan elemen ke tengah secara horizontal */
+    align-items: center; /* Posisikan elemen ke tengah secara vertikal */
+    width: 100%; /* Lebar penuh */
+    padding: 0 40px; /* Tambahkan padding kiri dan kanan */
+    background-color: #fff;
+    max-width: 1200px; /* Batasi lebar maksimum */
+    margin-top: 70px;
+    margin-bottom: 70px;
+     /* Posisikan elemen di tengah halaman */
+    gap: 300px; /* Jarak antar elemen */
+}
+
+
+
+/* Kolom teks */
+.welcome-text {
+    max-width: 50%; /* Batasi lebar teks */
+    color: #333; /* Warna teks */
+    font-family: Poppins;
+
+}
+
+.welcome-text span {
+    display: inline-block;
+    background-color: #78A8F0; /* Latar biru muda */
+    color: #fff; /* Teks hitam */
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block; /* Pastikan elemen tetap berbentuk blok */
+    width: 200px; /* Lebar tetap */
+    height: 30px; /* Tinggi tetap */
+    border-radius: 30px; /* Membuat sudut lebih bulat */
+    text-align: center; /* Posisi teks horizontal di tengah */
+    line-height: 30px;
+
+}
+
+.welcome-text h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Kolom gambar */
+.welcome-image {
+    max-width: 25%;
+    text-align: center; /* Posisikan gambar ke kanan */
+}
+
+.welcome-image img {
+    max-width: 100%; /* Gambar responsif */
+    height: auto;
+    display: block; /* Hindari jarak ekstra */
+}
+
+
+.kotak {
+    display: flex; /* Membuat kotak menjadi flex container */
+    justify-content: space-between; /* Menyebar item secara merata */
+    gap: 20px; /* Memberikan jarak antar kolom */
+    margin-top: 20px; /* Jarak atas */   
+    margin-left: 60px; /* Jarak atas */
+    margin-right: 60px; /* Jarak atas */
+}
+
+.kotak-item {
+    background-color: #fff; /* Latar belakang putih */
+    padding: 20px; /* Padding dalam kotak */
+    width: 30%; /* Lebar tiap kolom */
+    border: 1px solid #ddd; /* Border tipis abu-abu */
+    border-radius: 10px; /* Sudut kolom yang membulat */
+    text-align: center; /* Teks berada di tengah */
+}
+
+.kotak-icon {
+    width: 10%; /* Ubah ukuran gambar (lebar) */
+    height: auto; /* Jaga proporsi gambar */
+    margin-top: 20px; /* Jarak atas */  
+  }  
+
+
+/* Section Product */
+
+/* Styling untuk section Products */
+.container-products {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Poppins, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-products h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #0A2A4D;
+}
+
+.container-products p {
+    font-size: 1rem;
+    margin-bottom: 60px;
+    color: #555;
+}
+
+.fitur-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fitur-item {
+    background-color: #3f8cdf; /* Warna biru serupa */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fitur-item:hover {
+    background-color: #2a6ab9; /* Warna biru lebih gelap saat hover */
+    transform: translateY(-5px);
+}
+
+
+
+
+/* Section Contact */
+
+
+/* Styling Container */
+
+.container-contact {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Poppins, Arial, sans-serif;
+    color: #333;
+}
+
+/* Judul Section */
+.container-contact h1, .container-contact h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2a2a2a;
+}
+
+.container-contact p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* FAQ List Styling */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-container {
+    display: flex; /* Mengatur elemen di dalamnya menjadi sejajar horizontal */
+    justify-content: space-between; /* Menyebarkan elemen dengan jarak di antara keduanya */
+    align-items: flex-start; /* Menyelaraskan elemen di bagian atas */
+    gap: 20px; /* Jarak antara elemen */
+}
+
+.faq-title {
+    flex: 1; /* Memberikan lebar fleksibel */
+    text-align: left; /* Selaraskan teks ke kiri */
+}
+
+.faq-list {
+    flex: 1; /* Memberikan lebar fleksibel */
+    max-width: 500px; /* Batas maksimal lebar jika diperlukan */
+}
+
+
+/* Import Font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Style */
+.support {
+    background-color: #fff; /* Background putih */
+    color: #333; /* Warna teks */
+    padding: 30px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.support .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.support-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.brand-logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #007bff; /* Warna biru untuk logo */
+}
+
+.contact-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contact-info {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.column-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.support {
+    margin-left: 20px;
+}
+
+.support-column {
+    margin-left: 30px;
+}
+
+.support-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.support-column ul li {
+    margin-bottom: 8px;
+}
+
+.support-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.support-column ul li a:hover {
+    color: #007bff; /* Warna biru saat hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.accordion {
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Membuat border bulat */
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #f8f9fa; /* Warna default */
+    transition: background-color 0.3s ease; /* Efek transisi */
+  }
+  .accordion-header {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    border-radius: 12px; /* Bulatkan saat aktif */
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+  .accordion-header:hover {
+    background: #e9ecef;
+  }
+  .accordion-header.open {
+    background: white; /* Warna putih saat dibuka */
+    border-radius: 12px 12px 0 0; /* Bulatkan hanya bagian atas */
+  }
+  .accordion-content {
+    padding: 15px;
+    display: none; /* Default tersembunyi */
+    border-top: 1px solid #ddd;
+    background: white; /* Warna putih untuk konten */
+    border-radius: 0 0 12px 12px; /* Bulatkan hanya bagian bawah */
+  }
+  .accordion-header .icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  .accordion-header.open .icon {
+    transform: rotate(45deg); /* Tanda berubah dari + ke x */
+  }

@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->id()->unsigned(); // Untuk membuat id BIGINT UNSIGNED
+            $table->string('name'); // varchar(255)
+            $table->string('email')->unique(); // varchar(255) dengan unique key
+            $table->string('phone_number', 20)->nullable(); // varchar(20) untuk nomor telepon, bisa null
+            $table->string('password'); // varchar(255)
             $table->timestamps();
         });
 
