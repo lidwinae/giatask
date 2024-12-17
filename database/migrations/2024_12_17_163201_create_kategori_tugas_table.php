@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kategori_tugas', function (Blueprint $table) {
-            $table->increments('id'); // Auto increment primary key
-            $table->string('nama_kategori', 50); // Kolom nama_kategori
-            $table->unsignedBigInteger('user_id')->nullable(); // Kolom user_id
-            $table->primary('id'); // Primary key untuk kolom id
-            $table->index('user_id'); // Index untuk kolom user_id
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Foreign key ke tabel users
-        });
+        DB::statement("
+            CREATE TABLE `kategori_tugas` (
+            `id` int NOT NULL AUTO_INCREMENT,
+            `nama_kategori` varchar(50) NOT NULL,
+            `user_id` bigint unsigned DEFAULT NULL,
+            PRIMARY KEY (`id`),
+            KEY `idx_user_id` (`user_id`),
+            CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        ");
     }
 
     /**

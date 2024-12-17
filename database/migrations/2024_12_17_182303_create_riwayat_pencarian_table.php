@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -11,21 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('riwayat_pencarian', function (Blueprint $table) {
-            $table->increments('id_pencarian'); // Auto increment primary key
-            $table->unsignedBigInteger('id_user'); // Kolom id_user (bigint unsigned)
-            $table->string('text'); // Kolom text (varchar(255))
-            $table->dateTime('waktu_pencarian'); // Kolom waktu_pencarian (datetime)
-
-            // Primary Key
-            $table->primary('id_pencarian');
-
-            // Index
-            $table->index('id_user');
-
-            // Foreign Key
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-        });
+        DB::statement("
+            CREATE TABLE `riwayat_pencarian` (
+            `id_pencarian` int NOT NULL AUTO_INCREMENT,
+            `id_user` bigint unsigned NOT NULL,
+            `text` varchar(255) NOT NULL,
+            `waktu_pencarian` datetime NOT NULL,
+            PRIMARY KEY (`id_pencarian`),
+            KEY `id` (`id_user`),
+            CONSTRAINT `riwayat_pencarian_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        ");
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -11,25 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('riwayat_emails', function (Blueprint $table) {
-            $table->increments('id'); // Auto increment primary key
-            $table->unsignedBigInteger('user_id'); // Kolom user_id (bigint unsigned)
-            $table->unsignedInteger('tugas_id')->nullable(); // Kolom tugas_id (int unsigned, nullable)
-            $table->string('to'); // Kolom to (varchar(255))
-            $table->string('subject'); // Kolom subject (varchar(255))
-            $table->timestamp('dikirim_pada')->nullable()->default(DB::raw('CURRENT_TIMESTAMP')); // Kolom dikirim_pada (timestamp dengan default CURRENT_TIMESTAMP)
+        DB::statement("
+            CREATE TABLE `riwayat_emails` (
+            `id` int NOT NULL AUTO_INCREMENT,
+            `user_id` bigint unsigned NOT NULL,
+            `tugas_id` int DEFAULT NULL,
+            `to` varchar(255) NOT NULL,
+            `subject` varchar(255) NOT NULL,
+            `dikirim_pada` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (`id`),
+            KEY `user_id` (`user_id`),
+            KEY `tugas_id` (`tugas_id`),
+            CONSTRAINT `riwayat_emails_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+            CONSTRAINT `riwayat_emails_ibfk_2` FOREIGN KEY (`tugas_id`) REFERENCES `tugas` (`id_tugas`) ON DELETE SET NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-            // Primary Key
-            $table->primary('id');
-
-            // Index
-            $table->index('user_id');
-            $table->index('tugas_id');
-
-            // Foreign Keys
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('tugas_id')->references('id_tugas')->on('tugas')->onDelete('set null');
-        });
+        ");
     }
 
     /**

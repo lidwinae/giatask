@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -11,20 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tugas', function (Blueprint $table) {
-            $table->id('id_tugas');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->integer('nomor');
-            $table->string('judul');
-            $table->text('deskripsi')->nullable()->charset('utf8mb4')->collation('utf8mb4_0900_ai_ci');
-            $table->enum('prioritas', ['Tinggi', 'Sedang', 'Rendah']);
-            $table->enum('status', ['selesai', 'belum selesai'])->default('belum selesai');
-            $table->date('tanggal_tenggat')->nullable();
-            $table->foreignId('kategori_tugas_id')->nullable()->constrained('kategori_tugas')->onDelete('set null');
-            $table->primary('id_tugas');
-            $table->index('user_id');
-            $table->index('kategori_tugas_id');
-        });
+        DB::statement("
+            CREATE TABLE `tugas` (
+            `id_tugas` int NOT NULL AUTO_INCREMENT,
+            `user_id` bigint unsigned NOT NULL,
+            `nomor` int NOT NULL,
+            `judul` varchar(255) NOT NULL,
+            `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+            `prioritas` enum('Tinggi','Sedang','Rendah') NOT NULL,
+            `status` enum('selesai','belum selesai') DEFAULT 'belum selesai',
+            `tanggal_tenggat` date DEFAULT NULL,
+            `kategori_tugas_id` int DEFAULT NULL,
+            PRIMARY KEY (`id_tugas`),
+            KEY `id` (`user_id`),
+            KEY `fk_kategori_tugas` (`kategori_tugas_id`),
+            CONSTRAINT `fk_kategori_tugas` FOREIGN KEY (`kategori_tugas_id`) REFERENCES `kategori_tugas` (`id`) ON DELETE SET NULL,
+            CONSTRAINT `tugas_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        ");
     }
 
     /**
