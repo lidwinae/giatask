@@ -9,5 +9,5 @@ Aplikasi untuk manajemen tugas dan waktu
 1. Download .zip dari github project ini
 2. Extract ke file htdocs atau www (menyesuaikan aplikasi yang digunakan)
 3. Ubah isi dari .env, bisa dilihat pada .env.example
-4. Klik kanan dan jalankan cmd "php artisan generate:key"
+4. Klik kanan dan jalankan cmd "php artisan key:generate"
 5. php artisan serve
