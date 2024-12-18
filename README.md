@@ -6,20 +6,21 @@ Aplikasi untuk membantu pengguna melakukan manajemen tugas dan waktu. GiaTask di
 ![Screenshot GiaTask Filter](https://i.imgur.com/8rBbzV5.jpeg)
 
 # Fitur GiaTask:
-• Lihat tugas dalam bentuk kalender
-• Lihat tugas dalam bentuk tabel pada daftar atau list tugas, dengan opsi filter / sortir / pengurutan
-• Search tugas yang ingin dicari
-• Tambah tugas baru dan kategori baru
-• Edit / update / perbarui tugas dan kategori
-• Hapus tugas, kategori, dan riwayat
-• Buat dan kirim email mengenai tugas
+* Lihat tugas dalam bentuk kalender
+* Lihat tugas dalam bentuk tabel pada daftar atau list tugas, dengan opsi filter / sortir / pengurutan
+* Search tugas yang ingin dicari
+* Tambah tugas baru dan kategori baru
+* Edit / update / perbarui tugas dan kategori
+* Hapus tugas, kategori, dan riwayat
+* Buat dan kirim email mengenai tugas
 
 ## Cara Menggunakan
 1. Download .zip dari github project ini
-2. Extract ke file htdocs atau www (menyesuaikan aplikasi yang digunakan)
+2. Extract ke file folder htdocs atau www (menyesuaikan aplikasi yang digunakan)
 3. Ubah isi dari .env, bisa dilihat pada .env.example
 4. Klik kanan dan jalankan cmd "php artisan key:generate"
-5. php artisan serve
+5. php artisan migrate
+6. php artisan serve
 
 
 ### Catatan:
